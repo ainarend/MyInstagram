@@ -17,7 +17,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the current user's feed.
      *
      * @return \Illuminate\Http\Response
      */

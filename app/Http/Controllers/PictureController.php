@@ -17,6 +17,15 @@ class PictureController extends Controller
     }
 
     /**
+     * Get the requested picture data and pass it to the view
+     *
+     * @param \App\Picture $pic
+     */
+    public function show(\App\Picture $picture) {
+        return view('picture', ['picture' => $picture]);
+    }
+
+    /**
      * Store uploaded pictures to db and disk
      *
      * @param Request $request

@@ -12,6 +12,12 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Show user profile
+     *
+     * @param \App\User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(\App\User $user) {
         if($user->id === null) {
             $user = auth()->user();
