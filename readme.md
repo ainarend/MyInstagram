@@ -1,7 +1,7 @@
 ## MyInstagram
 Made using Laravel
 
-<p align="center"><img src="https://github.com/ainarend/MyInstagram/blob/master/2017-01-30%13_49_43-Minu-Instagram.png"></p>
+<p align="center"><img src="https://github.com/ainarend/MyInstagram/blob/master/2017-01-30%2013_49_43-Minu-Instagram.png"></p>
 <p align="center"><img src="https://github.com/ainarend/MyInstagram/blob/master/2017-01-30%2014_29_40-Minu-Instagram.png"></p>
 <p align="center"><img src="https://github.com/ainarend/MyInstagram/blob/master/2017-01-30%2014_57_15-Minu-Instagram.png"></p>
 
