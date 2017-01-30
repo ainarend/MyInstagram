@@ -12,6 +12,14 @@
                         <li><a href="{{ url('/feed') }}">View your feed</a></li>
                         <li><a href="{{ url('/user') }}/{{Auth::user()->id}}">View your profile</a></li>
                     </ul>
+
+                    <h3>Maybe they are your friends?</h3>
+                    <ul>
+                    @foreach($friends as $friend)
+                        <li><a href="{{ url('/user/'.$friend->id) }}">{{ $friend->name }}</a></li>
+                    @endforeach
+                    </ul>
+
                 </div>
             </div>
         </div>

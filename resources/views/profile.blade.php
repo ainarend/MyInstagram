@@ -9,9 +9,11 @@
 
             <div>
                 <div class="twPc-button">
-                    <!-- Twitter Button | you can get from: https://about.twitter.com/tr/resources/buttons#follow -->
-                    <a href="{{ url('/user/'.$userData->id) }}" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" data-dnt="true">Follow @<span>{{ $userData->name }}</span></a>
-                    <!-- Twitter Button -->
+
+                    {!! Form::open(['url' => '/user/'.Auth::user()->id.'/follows/'.$userData->id]) !!}
+                      {!! Form::submit('Follow '.$userData->name, ['class' => 'btn btn-primary']); !!}
+                    {!! Form::close() !!}
+
                 </div>
 
                 <a title="{{ $userData->name }}" href="{{ url('/user/'.$userData->id) }}" class="twPc-avatarLink">
@@ -38,13 +40,13 @@
                         <li class="twPc-ArrangeSizeFit">
                             <a href="https://twitter.com/mertskaplan/following" title="0 Following">
                                 <span class="twPc-StatLabel twPc-block">Following</span>
-                                <span class="twPc-StatValue">0</span>
+                                <span class="twPc-StatValue">{{ $userData->followees->count() }}</span>
                             </a>
                         </li>
                         <li class="twPc-ArrangeSizeFit">
                             <a href="https://twitter.com/mertskaplan/followers" title="0 Followers">
                                 <span class="twPc-StatLabel twPc-block">Followers</span>
-                                <span class="twPc-StatValue">0</span>
+                                <span class="twPc-StatValue">{{ $userData->followers->count() }}</span>
                             </a>
                         </li>
                     </ul>
@@ -81,7 +83,7 @@
     display: block !important;
 }
 .twPc-button {
-    margin: -35px -10px 0;
+    margin: -50px -10px 0;
     text-align: right;
     width: 100%;
 }

@@ -16,6 +16,11 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function home() {
+        return view('welcome', ['friends' => \App\User::orderByRaw("RAND()")->limit(5)->get()]);
+    }
+
+
     /**
      * Show the current user's feed.
      *

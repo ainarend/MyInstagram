@@ -14,14 +14,12 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'HomeController@home');
 Route::get('/feed', 'HomeController@index');
 
 Route::resource('user', 'UserController');
 Route::get('/profile', 'UserController@show');
+Route::post('/user/{user}/follows/{follows}', 'UserController@createFollowing');
 
 Route::resource('picture', 'PictureController');
 

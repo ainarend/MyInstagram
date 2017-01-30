@@ -29,9 +29,41 @@ class User extends Authenticatable
 
     /**
      * Get the pictures for the user.
+     *
      */
     public function pictures()
     {
         return $this->hasMany('App\Picture');
+    }
+
+
+    /**
+     * Who is the user following
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function followers()
+    {
+        return $this->belongsToMany(
+            self::class,
+            'follows',
+            'followee_id',
+            'follower_id'
+        );
+    }
+
+    /**
+     * Who are user's followers
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function followees()
+    {
+        return $this->belongsToMany(
+            self::class,
+            'follows',
+            'follower_id',
+            'followee_id'
+        );
     }
 }
